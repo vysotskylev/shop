@@ -11,7 +11,7 @@ Body {
 }  
 button {   
        background-color: cyan;   
-       width: 100%;  
+       width: 90%;  
         color: black;   
         padding: 15px;   
         margin: 10px 0px;   
@@ -22,7 +22,7 @@ button {
         border: 3px solid #f1f1f1;   
     }   
  input[type=text], input[type=password] {   
-        width: 100%;   
+        width: 90%;   
         margin: 8px 0;  
         padding: 12px 20px;   
         display: inline-block;   
@@ -41,15 +41,11 @@ button {
      
  .container {   
         border: 2px solid green;
-        width: 500px;
-        padding: 25px;
-        margin: 25px;   
+        width: 90%;
+        padding: 10px;
         background-color: lightyellow;  
     }   
 
-  img {
-    margin-bottom: -150px;
-  }
 
  .hidden {
     visibility: hidden;
@@ -62,6 +58,14 @@ button {
  .correct {
    background-color: greenyellow;
  }
+
+ img {
+        width: 150%;
+        margin-left: 50%;
+transform: translateX(-50%);
+        margin-bottom: -30px;
+  }
+  
 </style>
   
 <script src="script.js">
@@ -75,11 +79,14 @@ button {
     <div class="container">   
     <!-- <form>    -->
             <label>Моя любимая группа? </label>   
-            <input id="band" type="text">  
+            <input id="band" type="text"> 
+
             <label>Мой любимый сериал? </label>   
             <input id="series" type="text"> 
+
             <label>Какой язык я начала изучать? </label>   
             <input id="lang" type="text">  
+
             <button id="submit4">Проверить</button>  
         <!-- </form>      -->
       </div> 

@@ -21,7 +21,7 @@
       alert("Неправильное имя пользователя");
       return;
     }
-    if (await sha256(password) != '611c4fbb5e4f841a981431200f2998d35c0a53f4e51b387ea97f6a294632897a') {
+    if (await sha256(password) != 'e67756030db4b47423cbfc3136a2eca55c77c066645ccd0a5b0bc6d66a73e954') {
       alert("Неправильный пароль");
       return;
     }
