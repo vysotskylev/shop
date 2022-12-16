@@ -1,23 +1,103 @@
- <form action="action_page.php" method="post">
-  <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
-  </div>
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<meta charset="utf-8">
+<title> Login Page </title>  
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: pink;  
+}  
+button {   
+       background-color: #4CAF50;   
+       width: 100%;  
+        color: orange;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid #f1f1f1;   
+    }   
+ input[type=text], input[type=password] {   
+        width: 100%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }   
+        
+     
+ .container {   
+        width: 500px;
+        padding: 25px;
+        margin: 25px;   
+        background-color: lightblue;  
+    }   
+</style>
+  
+<script>
 
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+  async function sha256(message) {
+    // encode as UTF-8
+    const msgBuffer = new TextEncoder().encode(message);                    
+    // hash the message
+    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    // convert ArrayBuffer to Array
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
 
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
+    // convert bytes to hex string                  
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    console.log(hashHex);
+    return hashHex;
+  }
 
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</form> 
+  async function submit() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    if (await sha256(username) != '271237599b1662b3e5f53b62a098fb0b2cb925caeb49bdd44ca8e992d75e6899') {
+      alert("Неправильное имя пользователя");
+      return;
+    }
+    if (await sha256(password) != '82c9ed5e89c08b3d99646a61241b879932143bc325ca38273a46d30cd6cc0e6a') {
+      alert("Неправильный пароль");
+      return;
+    }
+    alert("Всё хорошо!");
+  }
+
+  window.onload = function() {
+    document.getElementById("submit").onclick = submit;
+  };
+ 
+</script> 
+
+</head>    
+<body>    
+    <center> <h1> Супер-секурный сайт </h1> </center>   
+    <center>
+
+    <div class="container">   
+    <!-- <form>    -->
+            <label>Имя пользователя: </label>   
+            <input id="username" type="text" placeholder="" name="username" required>  
+            <label>Пароль: </label>   
+            <input id="password" type="password" placeholder="Enter Password" name="password" required>  
+            <button id="submit">Войти</button>   
+        <!-- </form>      -->
+      </div> 
+    </center>
+</body>     
+</html>  
