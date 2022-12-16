@@ -1,4 +1,50 @@
 
+
+function initModal() {
+    const code = `
+<div id="mySizeChartModal" class="ebcf_modal">
+
+  <div class="ebcf_modal-content">
+    <span class="ebcf_close">&times;</span>
+    <p id="modalText">Some text in the Modal..</p>
+  </div>
+
+</div>`;
+
+    document.body.innerHTML += code;
+
+    var ebSpan = document.getElementsByClassName("ebcf_close")[0];
+    ebSpan.onclick = function() {
+        ebModal.style.display = "none";
+    }
+
+    // Get the modal
+    var ebModal = document.getElementById('mySizeChartModal');
+
+    var ebModalText = document.getElementById('modalText');
+
+    // When the user clicks the button, open the modal 
+    window.alert = function(msg) {
+        ebModalText.innerText = msg;
+        ebModal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    ebSpan.onclick = function() {
+        ebModal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == ebModal) {
+            ebModal.style.display = "none";
+        }
+    }
+}
+
+
+
+
   async function sha256(message) {
     // encode as UTF-8
     const msgBuffer = new TextEncoder().encode(message);                    
@@ -78,6 +124,8 @@
   }
 
   window.onload = function() {
+    initModal();
+
     var btn1 = document.getElementById("submit1");
     if (btn1) {
         btn1.onclick = submit1;
