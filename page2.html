@@ -7,10 +7,10 @@
 <style>   
 Body {  
   font-family: Calibri, Helvetica, sans-serif;  
-  background-color: white;  
+  background-color: pink;  
 }  
 button {   
-       background-color: blue;   
+       background-color: #4CAF50;   
        width: 100%;  
         color: orange;   
         padding: 15px;   
@@ -19,9 +19,7 @@ button {
         cursor: pointer;   
          }   
  form {   
-        border: 3px solid blueviolet;
-        padding: 100px;   
-
+        border: 3px solid #f1f1f1;   
     }   
  input[type=text], input[type=password] {   
         width: 100%;   
@@ -39,19 +37,18 @@ button {
         padding: 10px 18px;  
         margin: 10px 5px;  
     }   
+
+    img {
+    margin-bottom: -150px;
+  }
         
      
  .container {   
-       border: 3px solid blueviolet;
         width: 500px;
         padding: 25px;
         margin: 25px;   
         background-color: lightblue;  
     }   
-
-    img {
-    margin-bottom: -50px;
-  }
 </style>
   
 <script src="script.js">
@@ -59,15 +56,17 @@ button {
 
 </head>    
 <body>    
+    <!-- <center> <h1> Супер-секурный сайт </h1> </center>    -->
     <center>
-    <img src="im/im1.png">
+    <img src="im/im2.png">
+    
     <div class="container">   
     <!-- <form>    -->
             <label>Имя пользователя: </label>   
-            <input id="username" type="text" placeholder="" name="username" required>  
+            <input id="username" type="text" placeholder="имя пользователя" name="username" required>  
             <label>Пароль: </label>   
-            <input id="password" type="password" placeholder="Enter Password" name="password" required>  
-            <button id="submit1">Войти</button>   
+            <input id="password" type="password" placeholder="пароль" name="password" required>  
+            <button id="submit2">Войти</button>   
         <!-- </form>      -->
       </div> 
     </center>

@@ -3,25 +3,23 @@
 <head>  
 <meta name="viewport" content="width=device-width, initial-scale=1">  
 <meta charset="utf-8">
-<title> Login Page </title>  
+<title> Восстановление пароля </title>  
 <style>   
 Body {  
   font-family: Calibri, Helvetica, sans-serif;  
-  background-color: white;  
+  background-color: lightcyan;  
 }  
 button {   
-       background-color: blue;   
+       background-color: cyan;   
        width: 100%;  
-        color: orange;   
+        color: black;   
         padding: 15px;   
         margin: 10px 0px;   
         border: none;   
         cursor: pointer;   
          }   
  form {   
-        border: 3px solid blueviolet;
-        padding: 100px;   
-
+        border: 3px solid #f1f1f1;   
     }   
  input[type=text], input[type=password] {   
         width: 100%;   
@@ -42,16 +40,28 @@ button {
         
      
  .container {   
-       border: 3px solid blueviolet;
+        border: 2px solid green;
         width: 500px;
         padding: 25px;
         margin: 25px;   
-        background-color: lightblue;  
+        background-color: lightyellow;  
     }   
 
-    img {
-    margin-bottom: -50px;
+  img {
+    margin-bottom: -150px;
   }
+
+ .hidden {
+    visibility: hidden;
+ }
+
+ .wrong {
+   background-color: red;
+ }
+
+ .correct {
+   background-color: greenyellow;
+ }
 </style>
   
 <script src="script.js">
@@ -59,15 +69,18 @@ button {
 
 </head>    
 <body>    
-    <center>
-    <img src="im/im1.png">
+  <center>
+    <img src="im/im3.png">
+    <center> <h2> Восстановление пароля </h2> </center>   
     <div class="container">   
     <!-- <form>    -->
-            <label>Имя пользователя: </label>   
-            <input id="username" type="text" placeholder="" name="username" required>  
-            <label>Пароль: </label>   
-            <input id="password" type="password" placeholder="Enter Password" name="password" required>  
-            <button id="submit1">Войти</button>   
+            <label>Моя любимая группа? </label>   
+            <input id="band" type="text">  
+            <label>Мой любимый сериал? </label>   
+            <input id="series" type="text"> 
+            <label>Какой язык я начала изучать? </label>   
+            <input id="lang" type="text">  
+            <button id="submit4">Проверить</button>  
         <!-- </form>      -->
       </div> 
     </center>

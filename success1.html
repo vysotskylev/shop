@@ -7,11 +7,11 @@
 <style>   
 Body {  
   font-family: Calibri, Helvetica, sans-serif;  
-  background-color: white;  
+  background-color: #f2f2f2;  
 }  
 button {   
-       background-color: blue;   
-       width: 100%;  
+       background-color: #4CAF50;   
+       width: 200px;  
         color: orange;   
         padding: 15px;   
         margin: 10px 0px;   
@@ -19,9 +19,7 @@ button {
         cursor: pointer;   
          }   
  form {   
-        border: 3px solid blueviolet;
-        padding: 100px;   
-
+        border: 3px solid #f1f1f1;   
     }   
  input[type=text], input[type=password] {   
         width: 100%;   
@@ -42,16 +40,22 @@ button {
         
      
  .container {   
-       border: 3px solid blueviolet;
         width: 500px;
         padding: 25px;
         margin: 25px;   
         background-color: lightblue;  
     }   
 
-    img {
-    margin-bottom: -50px;
-  }
+    .warn {   
+       border: 3px solid blue;
+        width: 500px;
+        padding: 25px;
+        margin: 25px;   
+        background-color: lightblue;  
+        font-size: 20px;
+        color: red;
+    }   
+
 </style>
   
 <script src="script.js">
@@ -60,16 +64,18 @@ button {
 </head>    
 <body>    
     <center>
-    <img src="im/im1.png">
-    <div class="container">   
-    <!-- <form>    -->
-            <label>Имя пользователя: </label>   
-            <input id="username" type="text" placeholder="" name="username" required>  
-            <label>Пароль: </label>   
-            <input id="password" type="password" placeholder="Enter Password" name="password" required>  
-            <button id="submit1">Войти</button>   
-        <!-- </form>      -->
-      </div> 
+        <div class="warn">Вы успешно получили доступ ко всем курсам, которые оплатила Елена. Теперь вы стали ещё умнее! 
+            <br>
+            <a href="page2.html" >
+                <button>Далее</button>
+            </a>
+        </div>
+        <br>
+        <img src="im/success1.png">
+        
+        <br>
+
+        
     </center>
 </body>     
 </html>  
